@@ -346,7 +346,8 @@ export const drawXAxisLabels = (sortedData, gap, color = '#000000', showEvenNumb
               // left: data[0] - gap / 2,
               left: data['gap'] - gap / 2,
               width: gap,
-              alignItems: 'center'
+              alignItems: 'center',
+              fontFamily: Platform.OS == "android" ? "JF-Flat-regular" : "JFFlat-Regular"
             }}>
               <Text style={{fontSize: 9, color: color}}>
                 {

@@ -41,6 +41,14 @@ export default class ColumnChart extends Component {
         () => this.scrollView.scrollTo(this.props.initialScrollPosition), this.props.initialScrollTimeOut
       )
     }
+    if(nextProps.defaultColumnWidth != this.props.defaultColumnWidth){
+      let defaultGap = this.props.defaultColumnWidth + this.props.defaultColumnMargin
+      let newState = initData(this.props.data, this.props.height, defaultGap, this.props.numberOfYAxisGuideLine)
+      this.setState({
+        gap: defaultGap,
+        sortedData: newState.sortedData,
+      })
+    }
   }
 
   componentDidMount () {
